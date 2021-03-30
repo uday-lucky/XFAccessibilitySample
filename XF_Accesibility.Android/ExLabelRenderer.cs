@@ -20,7 +20,7 @@ namespace XF_Accesibility.Droid
             base.OnElementChanged(e);
             if (Control != null)
             {
-                if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.M)
+                if (Android.OS.Build.VERSION.SdkInt>= Android.OS.BuildVersionCodes.M)
                 {
                     Control.AccessibilityHeading = true;
                 }
@@ -37,7 +37,7 @@ namespace XF_Accesibility.Droid
         public override void OnInitializeAccessibilityNodeInfo(Android.Views.View host, AccessibilityNodeInfo info)
         {
             base.OnInitializeAccessibilityNodeInfo(host, info);
-            info.ContentDescription = host.ContentDescription + "Heading";
+            info.ContentDescription = info.Text + "Heading";
 
         }
 
